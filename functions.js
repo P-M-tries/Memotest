@@ -41,6 +41,7 @@ function sortFrontOfCardsRandomly(shuffledArray) {
     cardContainers.forEach(container => fillEach(container));
 };
 
+<<<<<<< Updated upstream
 =======
 function changeSubtitle() {
     const subtitle = document.querySelector('#subtitle');
@@ -117,6 +118,7 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let turns = 0;
 
 function manageCardUponClick() {
     if (lockBoard) return;
@@ -158,6 +160,14 @@ function checkForMatch(firstCard, secondCard) {
 
     isMatch ? disableCards() : unflipCards();
 
+    const turnbox = document.getElementById('trybox');
+
+    updateTurnCounter(turnbox);
+};
+
+function updateTurnCounter(turnbox) {
+    turns += 1;
+    turnbox.innerHTML = `Turns: ${turns}`
 };
 
 function disableCards() {
@@ -193,3 +203,7 @@ function resetBoard() {
 
 cards.forEach(card => card.addEventListener('click',manageCardUponClick))
 
+/*
+Implementar bootstrap
+*/
+>>>>>>> Stashed changes
