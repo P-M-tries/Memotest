@@ -113,3 +113,29 @@ function startTimer() {
     watch.start();
 }
 
+const cards = document.querySelectorAll('.memory-card');
+let hasFlippedCard = false;
+
+function manageCardUponClick() {
+
+    let backImage = this.getElementsByTagName('img')[0];
+    backImage.classList.add('flip');
+    let frontImage = this.getElementsByTagName('img')[1];
+
+    function hideBackFace () {
+        backImage.classList.toggle('not-display');
+    };
+
+    function showFrontFace () {
+        frontImage.classList.toggle('not-display');
+    };
+    setTimeout(hideBackFace,250)
+    setTimeout(showFrontFace,250)
+
+
+    
+};
+
+
+cards.forEach(card => card.addEventListener('click',manageCardUponClick))
+
