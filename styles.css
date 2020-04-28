@@ -1,0 +1,39 @@
+img {
+    height: 150px;
+    width: 150px;
+    border-radius: 2px;
+}
+
+#memory-game {
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    position: relative;
+}
+
+.memory-card:hover {
+    cursor: pointer;
+}
+
+.back-face.flip {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    backface-visibility: hidden;
+
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.display {
+    display: inline;
+}
+
+.not-display {
+    display: none;
+}
