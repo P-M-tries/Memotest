@@ -115,8 +115,12 @@ function startTimer() {
 
 const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;
 
 function manageCardUponClick() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
 
     let backImage = this.getElementsByTagName('img')[0];
     backImage.classList.add('flip');
@@ -132,9 +136,59 @@ function manageCardUponClick() {
     setTimeout(hideBackFace,250)
     setTimeout(showFrontFace,250)
 
+    if (!hasFlippedCard){
+        hasFlippedCard = true;
+        firstCard = this;
+        return;
+    }
+
+    hasFlippedCard = false;
+    secondCard = this;
+
+    checkForMatch(firstCard, secondCard);
 
     
 };
+
+function checkForMatch(firstCard, secondCard) {
+    let srcFirstCard = firstCard.getElementsByTagName('img')[1].getAttribute('src');
+    let srcSecondCard = secondCard.getElementsByTagName('img')[1].getAttribute('src');
+
+    let isMatch = srcFirstCard === srcSecondCard;
+
+    isMatch ? disableCards() : unflipCards();
+
+};
+
+function disableCards() {
+    firstCard.removeEventListener('click', manageCardUponClick);
+    secondCard.removeEventListener('click', manageCardUponClick);
+
+    matchedCards.push(firstCard);
+    matchedCards.push(secondCard);
+
+    resetBoard();
+};
+
+function unflipCards() {
+    lockBoard = true;
+    setTimeout(() => {
+        firstCard.getElementsByTagName('img')[0].classList.toggle('not-display');
+        firstCard.getElementsByTagName('img')[0].classList.remove('flip');
+        firstCard.getElementsByTagName('img')[1].classList.toggle('not-display');
+        secondCard.getElementsByTagName('img')[0].classList.toggle('not-display');
+        secondCard.getElementsByTagName('img')[0].classList.remove('flip');
+        secondCard.getElementsByTagName('img')[1].classList.toggle('not-display');
+
+        resetBoard();
+        },1200);
+
+}
+
+function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false]
+    [firstCard, secondCard] = [null, null];
+}
 
 
 cards.forEach(card => card.addEventListener('click',manageCardUponClick))
