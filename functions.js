@@ -229,9 +229,13 @@ function cleanBoardAndAlert() {
 function winAlert(space) {
     const $winAlert = document.querySelector('#win-alert');
     const $resetButton = document.querySelector('#reset-button');
+    const $subtitle = document.querySelector('#subtitle');
+    const $title = document.querySelector('#title');
 
     $winAlert.classList.remove('not-display');
     $resetButton.classList.remove('not-display');
+    $subtitle.remove();
+    $title.remove();
 
 };
 
