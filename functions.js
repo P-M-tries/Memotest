@@ -206,7 +206,7 @@ function checkForWin() {
     let matchedLenght = matchedCards.length;
     if (matchedLenght >= 16) {
         stopTimer();
-        setTimeout(cleanBoardAndAlert, 2000)
+        setTimeout(cleanBoardAndAlert, 1000)
         
         
     }else {
