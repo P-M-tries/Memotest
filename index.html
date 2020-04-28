@@ -5,6 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Memotest</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+<<<<<<< Updated upstream
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
@@ -43,3 +44,50 @@
     </div>
 </body>
 </html>
+=======
+    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+
+</head>
+<body onload="sortGame()">
+    <div align="center">
+    <h1>Test your memory!</h1>
+    <h2 id="subtitle">Please click on any of the cards to start the game</h2>
+    
+        <div id="timerbox">00 : 00 . 000</div>
+        <div id="trybox">Turns: 0</div>
+    <table id="memorygame">
+        <tr>
+            <td class="memory-card" id="card-01"></td>
+            <td class="memory-card" id="card-02"></td>
+            <td class="memory-card" id="card-03"></td>
+            <td class="memory-card" id="card-04"></td>
+        </tr>
+        <tr>
+            <td class="memory-card" id="card-05"></td>
+            <td class="memory-card" id="card-06"></td>
+            <td class="memory-card" id="card-07"></td>
+            <td class="memory-card" id="card-08"></td>
+        </tr>
+        <tr>
+            <td class="memory-card" id="card-09"></td>
+            <td class="memory-card" id="card-10"></td>
+            <td class="memory-card" id="card-11"></td>
+            <td class="memory-card" id="card-12"></td>
+        </tr>
+        <tr>
+            <td class="memory-card" id="card-13"></td>
+            <td class="memory-card" id="card-14"></td>
+            <td class="memory-card" id="card-15"></td>
+            <td class="memory-card" id="card-16"></td>
+        </tr>
+    </table>
+    <h1 class="not-display" id="win-alert">You've won!</h1>
+    <button class= "not-display" id="reset-button" onclick="location.reload()">Reset the game</button>
+    </div>
+</body>
+<script src='functions.js'></script>
+<script src='main.js'></script>
+</html>
+
+
+>>>>>>> Stashed changes
