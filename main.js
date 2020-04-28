@@ -4,8 +4,6 @@ function sortGame() {
     sortFrontOfCardsRandomly(shuffleArray(imageArray));
 };
 
-
-=======
 function startGame() {
     changeSubtitle();
     startTimer();

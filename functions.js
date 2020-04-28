@@ -41,8 +41,7 @@ function sortFrontOfCardsRandomly(shuffledArray) {
     cardContainers.forEach(container => fillEach(container));
 };
 
-<<<<<<< Updated upstream
-=======
+
 function changeSubtitle() {
     const subtitle = document.querySelector('#subtitle');
     subtitle.innerHTML = 'Hurry! Time is ticking!';
@@ -239,7 +238,3 @@ function winAlert(space) {
 
 cards.forEach(card => card.addEventListener('click',manageCardUponClick))
 
-/*
-Implementar bootstrap
-*/
->>>>>>> Stashed changes
