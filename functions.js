@@ -119,6 +119,7 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let turns = 0;
+let matchedCards = [];
 
 function manageCardUponClick() {
     if (lockBoard) return;
@@ -148,6 +149,7 @@ function manageCardUponClick() {
     secondCard = this;
 
     checkForMatch(firstCard, secondCard);
+    checkForWin();
 
     
 };
@@ -199,6 +201,40 @@ function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false]
     [firstCard, secondCard] = [null, null];
 }
+
+function checkForWin() {
+    
+    let matchedLenght = matchedCards.length;
+    if (matchedLenght >= 16) {
+        stopTimer();
+        setTimeout(cleanBoardAndAlert, 2000)
+        
+        
+    }else {
+        return;
+    }
+};
+
+function stopTimer() {
+    const timerbox = document.querySelector('#timerbox')
+    watch.stop();
+}
+
+function cleanBoardAndAlert() {
+    let table = document.querySelector('#memorygame')
+    table.innerHTML = '';
+    winAlert();
+    
+};
+
+function winAlert(space) {
+    const $winAlert = document.querySelector('#win-alert');
+    const $resetButton = document.querySelector('#reset-button');
+
+    $winAlert.classList.remove('not-display');
+    $resetButton.classList.remove('not-display');
+
+};
 
 
 cards.forEach(card => card.addEventListener('click',manageCardUponClick))
