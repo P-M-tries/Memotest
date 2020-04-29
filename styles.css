@@ -4,8 +4,9 @@ img {
     border-radius: 2px;
 }
 
-#memory-game {
+#memorygame {
     perspective: 1000px;
+    margin: 30px;
 }
 
 .memory-card {
@@ -36,4 +37,12 @@ img {
 
 .not-display {
     display: none;
+}
+
+#box-container {
+    padding-top: 20px;
+}
+
+#title {
+    padding-top: 20px;   
 }

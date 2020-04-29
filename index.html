@@ -6,15 +6,20 @@
     <title>Memotest</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+    <link rel='stylesheet' href='node_modules/bootstrap/dist/css/bootstrap.css'>
 
 </head>
 <body onload="sortGame()">
     <div align="center">
-    <h1 id="title">Test your memory!</h1>
-    <h2 id="subtitle">Please click on any of the cards to start the game</h2>
-    
-        <div id="timerbox">00 : 00 . 000</div>
-        <div id="trybox">Turns: 0</div>
+    <h1 class="h1" id="title">Test your memory!</h1>
+    <h2 class="h3 text-muted" id="subtitle">Please click on any of the cards to start the game</h2>
+        
+    <div class="row" id="box-container">
+        <div class="alert alert-info col-2 offset-md-4" id="timerbox">00 : 00 . 000</div>
+        <div class="alert alert-info col-2 offset-md" id="trybox">Turns: 0</div>
+      </div>
+        
+<div class="alert alert-info col-6">
     <table id="memorygame">
         <tr>
             <td class="memory-card" id="card-01"></td>
@@ -43,6 +48,7 @@
     </table>
     <h1 class="not-display" id="win-alert">You've won!</h1>
     <button class= "not-display" id="reset-button" onclick="location.reload()">Reset the game</button>
+    </div>
     </div>
 </body>
 <script src='functions.js'></script>
