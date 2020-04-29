@@ -221,7 +221,7 @@ function stopTimer() {
 
 function cleanBoardAndAlert() {
     let table = document.querySelector('#memorygame')
-    table.innerHTML = '';
+    table.remove();
     winAlert();
     
 };
@@ -234,6 +234,8 @@ function winAlert(space) {
 
     $winAlert.classList.remove('not-display');
     $resetButton.classList.remove('not-display');
+    $resetButton.classList.add('btn');
+    $resetButton.classList.add('btn-dark');
     $subtitle.remove();
     $title.remove();
 

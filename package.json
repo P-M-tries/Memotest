@@ -1,0 +1,22 @@
+{
+  "name": "memotest",
+  "version": "1.0.0",
+  "description": "Memotest para r/Argentina Programa",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/P-M-tries/Memotest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/P-M-tries/Memotest/issues"
+  },
+  "homepage": "https://github.com/P-M-tries/Memotest#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  }
+}
