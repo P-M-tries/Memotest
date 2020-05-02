@@ -6,6 +6,7 @@ function fillBackOfCards() {
         backImageHtml.setAttribute('src','imgs/back.png');
         backImageHtml.setAttribute('alt','back');
         backImageHtml.setAttribute('class','back-face');
+        backImageHtml.classList.add('img-fluid');
         
         container.appendChild(backImageHtml);
     };
@@ -30,7 +31,8 @@ function sortFrontOfCardsRandomly(shuffledArray) {
         frontImageHtml.setAttribute('src', `imgs/${shuffledArray[i]}.png`);
         frontImageHtml.setAttribute('alt','front');
         frontImageHtml.setAttribute('class','front-face');
-        frontImageHtml.setAttribute('class','not-display');
+        frontImageHtml.classList.add('not-display');
+        frontImageHtml.classList.add('img-fluid');
 
         container.appendChild(frontImageHtml)
 
@@ -174,6 +176,8 @@ function updateTurnCounter(turnbox) {
 function disableCards() {
     firstCard.removeEventListener('click', manageCardUponClick);
     secondCard.removeEventListener('click', manageCardUponClick);
+    firstCard.getElementsByTagName('img')[1].classList.add('matched');
+    secondCard.getElementsByTagName('img')[1].classList.add('matched');
 
     matchedCards.push(firstCard);
     matchedCards.push(secondCard);
